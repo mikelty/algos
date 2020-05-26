@@ -1,32 +1,28 @@
 #https://leetcode.com/problems/implement-trie-prefix-tree/submissions/
+from collections import defaultdict
 
 class TrieNode():
     def __init__(self):
         self.is_word = False
-        self.children = collections.defaultdict(TrieNode)
+        self.children = defaultdict(TrieNode)
 
 
 class Trie:
+    """
+    used for quickly searching words and prefixes
+    uses less space
+    """
 
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
         self.root = TrieNode()
 
     def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie.
-        """
         cur = self.root
         for c in word:
             cur = cur.children[c]
         cur.is_word = True
 
     def search(self, word: str) -> bool:
-        """
-        Returns if the word is in the trie.
-        """
         cur = self.root
         for c in word:
             if c in cur.children:
@@ -36,9 +32,6 @@ class Trie:
         return cur.is_word
 
     def startsWith(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        """
         cur = self.root
         for c in prefix:
             if c in cur.children:
