@@ -1,6 +1,4 @@
-#TODO: solve https://www.hackerrank.com/challenges/contacts/problem?h_r=internal-search
-#TODO: modify the visited object to be is_word
-#TODO:maybe add is_leaf
+#solveshttps://www.hackerrank.com/challenges/contacts/problem?h_r=internal-search
 #!/bin/python3
 
 import os
