@@ -10,6 +10,7 @@ class BIT():
         note this implementation uses one-based indexing
         :param length: length of the array
         """
+        self.length=length
         self.A=[0]*(self.length+1)
 
     def LSB(self,i):
